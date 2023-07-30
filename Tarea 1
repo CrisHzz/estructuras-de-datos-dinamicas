@@ -1,1 +1,11 @@
+import sys
 
+def MaxAddValuePython():
+    MaxValue1=sys.maxsize
+    MaxValue2=sys.maxsize
+
+    return MaxValue1+MaxValue2
+
+test=MaxAddValuePython
+
+print(test)
