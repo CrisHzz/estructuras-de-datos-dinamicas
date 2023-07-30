@@ -1,0 +1,19 @@
+public class clase2{
+    public static double MultiplicarSinOperador( double number_1,double number_2){
+        var c=0;
+        double resultado=0;
+
+        while (c<number_2){
+            resultado=resultado+number_1;
+            c=c+1;
+
+        }
+        return resultado;
+    }
+    public static void main(String[] args) {
+        int prueba = (int) MultiplicarSinOperador(1.5, 10);
+        System.out.println(prueba);
+    }
+}
+
+//Hacer una suma de 2 numeros con valores maximos en python.
