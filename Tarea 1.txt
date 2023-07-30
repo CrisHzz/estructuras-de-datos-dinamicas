@@ -1,0 +1,13 @@
+#función de sumar 2 números máximos en python
+
+import sys #Importamos sys
+
+def MaxAddValuePython():
+    MaxValue1=sys.maxsize #Creamos el numero mayor 1 y 2
+    MaxValue2=sys.maxsize
+
+    return MaxValue1+MaxValue2 #regresamos la suma de esos 2 
+
+test=MaxAddValuePython #Creamos un objeto para probarlo y imprimimos
+
+print(test)
