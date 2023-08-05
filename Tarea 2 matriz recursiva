@@ -1,0 +1,44 @@
+public class SumaMatrices {
+    public static void main(String[] args) {
+        int[][] matriz_N1 = {{19, 2, 3}, {10, 2, 7}};
+        int[][] matriz_N2 = {{2, 5, 3}, {12, 1, 9}, {8, 0, 6}};
+
+        int[][] resultado = sumarMatrices(matriz_N1, matriz_N2);
+        for (int[] fila : resultado) {
+            for (int indice : fila) {
+                System.out.print(indice + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int[][] sumarMatrices(int[][] m1, int[][] m2) {
+        int filas = Math.max(m1.length, m2.length);
+        int columnas = Math.max(m1[0].length, m2[0].length);
+
+        int[][] resultado = new int[filas][columnas];
+
+        sumarMatricesRecursivo(m1, m2, resultado, 0, 0);
+
+        return resultado;
+    }
+
+    private static void sumarMatricesRecursivo(int[][] m1, int[][] m2, int[][] resultado, int fila, int columna) {
+        if (fila == resultado.length) {
+            return;
+        }
+
+        int valor1 = (fila < m1.length && columna < m1[0].length) ? m1[fila][columna] : 0;
+        int valor2 = (fila < m2.length && columna < m2[0].length) ? m2[fila][columna] : 0;
+
+        resultado[fila][columna] = valor1 + valor2;
+
+        if (columna == resultado[0].length - 1) {
+            sumarMatricesRecursivo(m1, m2, resultado, fila + 1, 0);
+        } else {
+            sumarMatricesRecursivo(m1, m2, resultado, fila, columna + 1);
+        }
+    }
+}
+
+
