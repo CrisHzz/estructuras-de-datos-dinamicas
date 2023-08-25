@@ -1,0 +1,14 @@
+import java.util.List;
+
+public class EstaEnLIsta {
+    public static boolean buscarEnIndice(List<Integer> lista, int elemento, int indice) {
+        if (indice < 0 || indice >= lista.size()) {
+            return false;
+        }
+        if (lista.get(indice) == elemento) {
+            return true;
+        } else {
+            return buscarEnIndice(lista, elemento, indice + 1); 
+    }
+    }
+}

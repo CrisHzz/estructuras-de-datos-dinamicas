@@ -1,0 +1,19 @@
+public class SumaMatriz {
+    public static int SumaImpares(int[][] matriz, int fila, int columna) {
+        if (fila >= matriz.length) {
+            return 0;
+        } else if (columna >= matriz[fila].length) {
+            return SumaImpares(matriz, fila + 1, 0);
+        } else {
+            int posicionActual = matriz[fila][columna];
+            int sumaFaltante = SumaImpares(matriz, fila, columna + 1);
+            if (posicionActual % 2 != 0) {
+                return posicionActual + sumaFaltante;
+            } else {
+                return sumaFaltante;
+            }
+
+        }
+    }
+
+}

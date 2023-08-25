@@ -1,0 +1,20 @@
+public class AlfanumericoExtraccion {
+    public static int extraerRecursividad(String original, int indice, int numeroactual) {
+        if (indice == original.length()) {
+            return numeroactual;
+        }
+
+        char letraActual = original.charAt(indice);
+
+        if (Character.isDigit(letraActual)) {
+            int digito = Character.getNumericValue(letraActual);
+            numeroactual = numeroactual * 10 + digito;
+        }
+
+        return extraerRecursividad(original, indice + 1, numeroactual);
+    }
+
+    public static int extraerLetras(String input) {
+        return extraerRecursividad(input, 0, 0);
+    }
+}

@@ -1,0 +1,12 @@
+public class InvertirMitadString {
+    public String invertirMitadString(String palabra) {
+        int tamanoMitad = palabra.length() / 2;
+        String parte1 = palabra.substring(0, tamanoMitad);
+        String parte2 = palabra.substring(tamanoMitad);
+
+        StringBuilder invertir = new StringBuilder(parte2);
+        invertir.reverse();
+
+        return parte1 + invertir.toString();
+    }
+}

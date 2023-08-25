@@ -1,0 +1,14 @@
+public class EnteroConMultiplos2y4 {
+    public static int Multiplos2y4PorDigitos(int number) {
+        if (number == 0) {
+            return 0;
+        }
+        int comprobarUltimoDigito = number % 10;
+
+        if (comprobarUltimoDigito != 0 && (comprobarUltimoDigito % 2 == 0 || comprobarUltimoDigito % 4 == 0)) {
+            return 1 + Multiplos2y4PorDigitos(number / 10);
+        } else {
+            return Multiplos2y4PorDigitos(number / 10);
+        }
+    }
+}
