@@ -1,0 +1,50 @@
+public class Nodo {
+    private Nodo proximo;
+    private int valor;
+
+    public Nodo(Nodo proximo, int valor) {
+        this.proximo = proximo;
+        this.valor = valor;
+    }
+
+    public Nodo getProximo() {
+        return proximo;
+    }
+
+    public void setProximo(Nodo proximo) {
+        this.proximo = proximo;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
+    public Nodo agregarNodoAlista(Nodo lista,Nodo vl){
+        if (lista==null){
+            return vl;
+        }
+        if (vl.getValor()< lista.getValor()){
+            vl.proximo=lista;
+            return vl;
+        }
+
+        if (vl.getValor()==lista.getValor()){
+            return lista;
+        }
+
+        lista.proximo = agregarNodoAlista(lista.proximo,vl);
+        return lista;
+    }
+
+    public static void imprimirListaLigada(Nodo lista) {
+        while (lista != null) {
+            System.out.print(lista.valor + " ");
+            lista = lista.getProximo();
+        }
+    }
+
+}
