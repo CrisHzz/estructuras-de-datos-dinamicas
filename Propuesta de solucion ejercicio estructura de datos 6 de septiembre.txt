@@ -1,44 +1,40 @@
+//Esta es mi propuesta para agregar un nodo a una lista ligada
 public class Nodo {
     private Nodo proximo;
     private int valor;
-
     public Nodo(Nodo proximo, int valor) {
         this.proximo = proximo;
         this.valor = valor;
     }
-
     public static void main(String[] args) {
         Nodo n1 = new Nodo(null, 4);
-        Nodo n2 = new Nodo(null, 6);
-        Nodo n3 = new Nodo(null, 2);
+        Nodo n2 = new Nodo(null, 3);
+        Nodo n3 = new Nodo(null, 10);
         Nodo l1 = AgregarNodo(null, n1, null);
         Nodo l2 = AgregarNodo(l1, n2, null);
         Nodo l3 = AgregarNodo(l2, n3, null);
 
-        // Imprimir la lista ligada resultante
+        //Asi imprimo en pantalla la lista ligada
         Nodo actual = l3;
         while (actual != null) {
-            System.out.print(actual.getValor() + " ");
+            System.out.println(actual.getValor() + " ");
             actual = actual.getProximo();
         }
     }
-
     public Nodo getProximo() {
         return proximo;
     }
-
     public void setProximo(Nodo proximo) {
         this.proximo = proximo;
     }
-
     public int getValor() {
         return valor;
     }
-
     public void setValor(int valor) {
         this.valor = valor;
     }
 
+	//Esta es la funcion AgregarNodo
     public static Nodo AgregarNodo(Nodo cabeza, Nodo ingresar, Nodo anterior) {
         if (cabeza == null) {
             if (anterior != null) {
@@ -46,7 +42,6 @@ public class Nodo {
             }
             return ingresar;
         }
-
         if (ingresar == null) {
             System.out.println("¡ERROR!");
             return cabeza;
